@@ -1,0 +1,275 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #333;
+}
+
+/* Header */
+header {
+  background: #5a3e2b; /* dryfruit brown tone */
+  color: #fff;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Dropdown (Logo + Menu) */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropbtn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.dropbtn span {
+  color: #f4b400; /* golden */
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: #fff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 5px;
+}
+.dropdown-content a {
+  color: #333;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background: #f4b400;
+  color: #fff;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Right-side nav (Login/Logout) */
+nav a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: #f4b400;
+}
+
+/* Footer */
+footer {
+  background: #5a3e2b;
+  color: #fff;
+  margin-top: 30px;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 30px 50px;
+}
+.footer-section {
+  flex: 1;
+  min-width: 220px;
+  margin: 15px;
+}
+.footer-section h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #f4b400;
+}
+.footer-section h3 span {
+  color: #fff;
+}
+.footer-section h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #f4b400;
+}
+.footer-section p, .footer-section li {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.footer-section ul {
+  list-style: none;
+}
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.footer-section ul li a:hover {
+  color: #f4b400;
+}
+.footer-bottom {
+  text-align: center;
+  background: #4a2f21;
+  padding: 12px;
+  font-size: 14px;
+}
+.footer-bottom p {
+  margin: 0;
+}
+
+/* Home Page Background (Hero Section) */
+.home-bg {
+  background: url('../images/dryfruitsandnuts.jpg') no-repeat center center/cover;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+.home-bg::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.55); /* darker overlay */
+}
+.hero-text {
+  position: relative;
+  color: #fff;
+  max-width: 700px;
+  padding: 20px;
+  z-index: 2;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+}
+.hero-text h1 {
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #ffeb3b; /* bright golden */
+  letter-spacing: 1px;
+}
+.hero-text h1 span {
+  color: #f9a825; /* deep yellow highlight */
+}
+.hero-text p {
+  font-size: 20px;
+  margin-bottom: 25px;
+  color: #f1f1f1;
+  line-height: 1.6;
+}
+.hero-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #f4b400, #ffeb3b);
+  color: #5a3e2b;
+  padding: 14px 30px;
+  font-size: 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(104, 101, 101, 0.3);
+}
+.hero-btn:hover {
+  background: #fff;
+  color: #5a3e2b;
+  transform: scale(1.05);
+}
+
+/* Forms */
+form {
+  max-width: 400px;
+  margin: 30px auto;
+  background: #fdf6f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #ccc;
+}
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+form button {
+  background: #5a3e2b;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+form button:hover {
+  background: #f4b400;
+}
+
+/* Product Section */
+.products {
+  padding: 50px 80px;
+  text-align: center;
+}
+.products h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #5a3e2b;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+.product-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  transition: 0.3s;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.product-card h3 {
+  margin: 12px 0 5px;
+  font-size: 18px;
+  color: #5a3e2b;
+}
+.product-card p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+.product-card button {
+  background: #5a3e2b;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.product-card button:hover {
+  background: #f4b400;
+}
