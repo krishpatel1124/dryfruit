@@ -6,7 +6,6 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email    = $conn->real_escape_string($_POST['email']);
     $password = $_POST['password'];
@@ -19,7 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         if (password_verify($password, $row['password'])) {
             $_SESSION['customer_id'] = $row['customer_id'];
-            $_SESSION['name'] = $row['name'];
+            $_SESSION['name']        = $row['name'];
+            $_SESSION['email']       = $row['email']; // ✅ store email
             header("Location: c_dashboard.php"); 
             exit();
         }
@@ -33,7 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row2 = $result2->fetch_assoc();
         if (password_verify($password, $row2['password'])) {
             $_SESSION['supplier_id'] = $row2['supplier_id'];
-            $_SESSION['name'] = $row2['name'];
+            $_SESSION['name']        = $row2['name'];
+            $_SESSION['email']       = $row2['email']; // ✅ store email
             header("Location: s_dashboard.php"); 
             exit();
         }
@@ -50,4 +51,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <button type="submit">Login</button>
 </form>
 
-<?php include("includes/footer.php"); ?>
+<?php include("includes/footer.php"); ?> 

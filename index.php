@@ -19,7 +19,7 @@
       <img src="assets/images/1.jpeg" alt="Almonds">
       <h3>Almonds</h3>
       <p>₹550 / Kg</p>
-      <a href="login.php" class="hero-btn">Add to Cart</a>
+      <a href="login.php" class="hero-btn">shop now</a>
     </div>
 
     <!-- Product 2 -->
@@ -27,7 +27,7 @@
       <img src="assets/images/Cashewnuts-Plian-1.jpg" alt="Cashews">
       <h3>Cashews</h3>
       <p>₹720 / Kg</p>
-      <a href="login.php" class="hero-btn">Add to Cart</a>
+      <a href="login.php" class="hero-btn">shop now</a>
     </div>
 
     <!-- Product 3 -->
@@ -35,7 +35,7 @@
       <img src="assets/images/Pistachio-640x427.webp" alt="Pistachio">
       <h3>Pistachio</h3>
       <p>₹950 / Kg</p>
-      <a href="login.php" class="hero-btn">Add to Cart</a>
+      <a href="login.php" class="hero-btn">shop now</a>
     </div>
 
     <!-- Product 4 -->
@@ -43,7 +43,7 @@
       <img src="assets/images/dried-yellow-raisins-1000x1000.webp" alt="Raisins">
       <h3>Raisins</h3>
       <p>₹320 / Kg</p>
-      <a href="login.php" class="hero-btn">Add to Cart</a>
+      <a href="login.php" class="hero-btn">shop now</a>
     </div>
 
   </div>

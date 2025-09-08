@@ -1,37 +1,48 @@
 <?php
-session_start();
 include("includes/db.php");
+session_start();
 
-// ✅ Check if user is logged in
 if (!isset($_SESSION['customer_id'])) {
-    header("Location: ../login.php");
+    // If user is not logged in, send them to login page
+    header("Location: login.php");
     exit();
 }
 
-$customer_id = $_SESSION['customer_id'];
+if (isset($_GET['id'])) {
+    $customer_id = $_SESSION['customer_id'];
+    $product_id  = (int)$_GET['id'];
 
-// ✅ Check if product_id is passed
-if (isset($_GET['product_id'])) {
-    $product_id = intval($_GET['product_id']);
+    // Check if product already exists in cart
+    $check_sql = "SELECT * FROM cart WHERE customer_id = ? AND product_id = ?";
+    $stmt = $conn->prepare($check_sql);
+    $stmt->bind_param("ii", $customer_id, $product_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    // ✅ Check if product already exists in cart
-    $check_sql = "SELECT * FROM cart WHERE customer_id = $customer_id AND product_id = $product_id";
-    $check_result = $conn->query($check_sql);
-
-    if ($check_result->num_rows > 0) {
-        // If already in cart → increase quantity
-        $conn->query("UPDATE cart SET quantity = quantity + 1 WHERE customer_id = $customer_id AND product_id = $product_id");
-        $_SESSION['message'] = "Product quantity updated in your cart!";
+    if ($result && $result->num_rows > 0) {
+        // ✅ Update quantity if already in cart
+        $update_sql = "UPDATE cart SET quantity = quantity + 1 WHERE customer_id = ? AND product_id = ?";
+        $stmt_update = $conn->prepare($update_sql);
+        $stmt_update->bind_param("ii", $customer_id, $product_id);
+        $stmt_update->execute();
+        $stmt_update->close();
     } else {
-        // If not in cart → insert new record
-        $conn->query("INSERT INTO cart (customer_id, product_id, quantity) VALUES ($customer_id, $product_id, 1)");
-        $_SESSION['message'] = "Product added to your cart!";
+        // ✅ Insert new product into cart
+        $insert_sql = "INSERT INTO cart (customer_id, product_id, quantity, added_date) VALUES (?, ?, 1, CURDATE())";
+        $stmt_insert = $conn->prepare($insert_sql);
+        $stmt_insert->bind_param("ii", $customer_id, $product_id);
+        $stmt_insert->execute();
+        $stmt_insert->close();
     }
-} else {
-    $_SESSION['message'] = "Invalid request!";
-}
 
-// ✅ Redirect back to dashboard
-header("Location: c_dashboard.php");
-exit();
+    $stmt->close();
+
+    // ✅ Redirect back to cart page
+    header("Location: c_cart.php");
+    exit();
+} else {
+    // If no product ID is provided
+    header("Location: c_view_product.php");
+    exit();
+}
 ?>

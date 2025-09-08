@@ -37,10 +37,11 @@ $profile_pic = !empty($user['profile_pic']) ? "../assets/uploads/" . $user['prof
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCustomer">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="../index.php">Home</a></li>
+     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item"><a class="nav-link" href="c_dashboard.php">Dashboard</a></li>
-        <li class="nav-item"><a class="nav-link" href="../c_cart.php">Cart</a></li>
+        <li class="nav-item"><a class="nav-link" href="c_cart.php">Cart</a></li>
+        <li class="nav-item"><a class="nav-link" href="c_view_product.php">Product</a></li> 
+        <li class="nav-item"><a class="nav-link" href="c_order.php">Order</a></li> 
       </ul>
 
       <!-- ✅ Profile picture only (no username) -->

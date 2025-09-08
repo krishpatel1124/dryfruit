@@ -69,7 +69,10 @@ $result = $conn->query($sql);
               $grand_total += $total;
           ?>
           <tr>
-            <td><img src="assets/images/1.jpeg<?php echo $row['image']; ?>" width="70" height="70" class="rounded"></td>
+            <td>
+                  <img src="<?php echo htmlspecialchars($row['image_url']); ?>" 
+                  width="70" height="70" class="rounded">
+            </td>
             <td><?php echo $row['product_name']; ?></td>
             <td><?php echo $row['price']; ?></td>
             <td>
@@ -96,7 +99,8 @@ $result = $conn->query($sql);
     </div>
     <div class="text-center mt-3">
       <a href="c_dashboard.php" class="btn btn-warning me-2">Continue Shopping</a>
-      <a href="checkout.php" class="btn btn-success">Proceed to Checkout</a>
+      <a href="place_order.php" class="btn btn-success">Place Order</a>
+
     </div>
   <?php else: ?>
     <p class="text-center">Your cart is empty. <a href="c_dashboard.php">Shop now</a></p>
