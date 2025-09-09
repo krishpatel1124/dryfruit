@@ -73,6 +73,15 @@ if (!isset($_SESSION['customer_id'])) {
         </div>
       </div>
     </div>
+    <div class="col-md-3">
+      <div class="card shadow-sm h-100">
+        <img src="assets/images/walnut.webp" class="card-img-top" alt="walnut" style="height:200px; object-fit:cover;">
+        <div class="card-body text-center">
+          <h5 class="card-title">walnut</h5>
+          <a href="c_product.php?category_id=4" class="btn btn-primary">View Products</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 

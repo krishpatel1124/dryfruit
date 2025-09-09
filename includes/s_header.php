@@ -32,15 +32,14 @@ $profile_pic = !empty($user['profile_pic']) ? "../assets/uploads/" . $user['prof
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container-fluid">
-    <a class="navbar-brand fw-bold" href="../index.php">DryFruit <span>Store</span></a>
+    <a class="navbar-brand fw-bold" href="s_dashboard.php">DryFruit <span>Store</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupplier">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupplier">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="../index.php">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="s_dashboard.php">Dashboard</a></li>
-        <li class="nav-item"><a class="nav-link" href="add_product.php">Add Product</a></li>
+        <li class="nav-item"><a class="nav-link" href="s_add_product.php">Add Product</a></li>
       </ul>
 
       <!-- ✅ Profile Image Dropdown (no username) -->
